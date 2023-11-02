@@ -29,6 +29,7 @@ This repo aims to help participants understand the following components of the c
 **This version is for internal testing only and is not suitable for public release.** 
 
 
+
 ## For Developers
 
 
@@ -68,11 +69,24 @@ spectral-cli configure
 ```
 Follow the instructions in terminal to configure the cli.
 
-## Getting Help
+After associating your cli wallet and Alchemy API key, run the following command again to verify setup is complete. 
+```
+spectral-cli configure 
+```
+You should see a message stating "Spectral CLI is configured!"
 
-* [Join Discord](https://discord.com/invite/Vqwhxva7Y2)
-* Discourse Link
-* Twitter
+
+
+### Start Modeling and Prepare Submissions
+
+[See this notebook for quickstart and a walkthrough of the entire process](./modeler_starter_kit.ipynb)
+
+## Getting Help
+Reach out to us on Discord or Twitter if you have any questions
+* [Discord](https://discord.com/invite/Vqwhxva7Y2)
+* [Twitter](https://twitter.com/SpectralFi)
+
+If you encounter an issue in this repo [create an issue.](https://github.com/Spectral-Finance/challenge-1-modeler-starter-kit/issues/new)
 
 
 
