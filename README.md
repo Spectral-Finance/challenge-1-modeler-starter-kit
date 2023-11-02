@@ -13,6 +13,9 @@ Your goal is to predict liquidation (as per binary classification) of an active 
 * Actual liquidation, when a borrower’s health factor drops below the liquidation threshold, triggering a liquidation event; AND
 * Technical liquidation, when a borrower’s health factor drops below a specific threshold.
 
+
+See the [announcement page](https://blog.spectral.finance/challenge-1-credit-scoring-web3/) for more details on the importance of this problem and challenge design.
+
 ## Goals
 This repo aims to help participants understand the following components of the challenge:
 1. Using the Spectral cli
@@ -29,6 +32,7 @@ This repo aims to help participants understand the following components of the c
 ## For Developers
 
 
+### Project setup and requirements
 First, clone the repository
 ```
 git clone https://github.com/Spectral-Finance/challenge-1-modeler-starter-kit.git
@@ -47,3 +51,26 @@ pip install -r requirements.txt
 ```
 
 If using an application like PyCharm, be sure to set the python interpreter to the virtual env you just created.
+
+### Spectral cli setup
+
+
+
+
+## Getting Help
+
+* [Join Discord](https://discord.com/invite/Vqwhxva7Y2)
+* Discourse Link
+* Twitter
+
+
+
+## Acknowledgements
+This work would not be possible without the contributions from the following teams:
+* [Cryo](https://github.com/paradigmxyz/cryo?ref=github.spectral.finance)
+* [Erigon](https://erigon.ch/?ref=github.spectral.finance)
+* [ezkl](https://github.com/zkonduit/ezkl?ref=github.spectral.finance)
+* [The Graph](https://thegraph.com/?ref=github.spectral.finance)
+* [Messari](https://subgraphs.messari.io/?ref=github.spectral.finance)
+* [Reth](https://github.com/paradigmxyz/reth?ref=github.spectral.finance)
+* [Transpose](https://www.transpose.io/?ref=github.spectral.finance)
