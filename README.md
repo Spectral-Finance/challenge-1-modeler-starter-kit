@@ -77,7 +77,7 @@ You should see a message stating "Spectral CLI is configured!"
 
 
 
-### Start Modeling and Prepare Submissions
+### Download Data, Start Modeling, and Prepare Submissions
 
 [See this notebook for quickstart and a walkthrough of the entire process](./modeler_starter_kit.ipynb)
 
