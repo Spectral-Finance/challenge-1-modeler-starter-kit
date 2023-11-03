@@ -111,81 +111,79 @@ def print_train_time(start: float, end: float, device: torch.device = None):
 
 
 
-def auc_fn(y_true, y_logits):
+def auc_fn(y_true, y_probs):
     """
     Get FPR, TPR and thresholds for the AUC curve
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    metric = BinaryROC(thresholds=None)
-    fpr, tpr, thresholds = metric(y_logits, y_true.type(torch.int))
-    J = tpr.numpy() - fpr.numpy()
+    metric = BinaryROC(thresholds=None).to(device)
+    fpr, tpr, thresholds = metric(y_probs, y_true.type(torch.int))
+    J = tpr.detach().cpu().numpy() - fpr.detach().cpu().numpy()
     ix = np.argmax(J)
     best_thresh = thresholds[ix].item()
     return best_thresh
 
 
-def auroc_fn(y_true, y_logits):
+def auroc_fn(y_true, y_probs):
     """
     Calculate AUROC
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    metric = BinaryAUROC(thresholds=None)
-    return (metric(y_logits, y_true) * 100).item()
+    metric = BinaryAUROC(thresholds=None).to(device)
+    return (metric(y_probs, y_true) * 100).item()
 
 
-def auc_pr_fn(y_true, y_logits):
+def auc_pr_fn(y_true, y_probs):
     """
     Calculate AUC of the PR curve
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    metric = BinaryPrecisionRecallCurve(thresholds=None)
-    precision, recall, thresholds = metric(y_logits, y_true.type(torch.int))
-    precision, recall = precision.numpy(), recall.numpy()
+    metric = BinaryPrecisionRecallCurve(thresholds=None).to(device)
+    precision, recall, thresholds = metric(y_probs, y_true.type(torch.int))
+    precision, recall = precision.detach().cpu().numpy(), recall.detach().cpu().numpy()
     return auc(recall, precision) * 100
 
 
-def recall_fn(y_true, y_pred, y_logits):
+def recall_fn(y_true, y_pred, y_probs):
     """
     Calculate recall
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
     :param y_pred: A tensor of predicted values, in credit scoring 0 or 1 values indicating if the borrower would be liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    best_thresh = auc_fn(y_true, y_logits)
-    metric = BinaryRecall(threshold=best_thresh)
+    best_thresh = auc_fn(y_true, y_probs)
+    metric = BinaryRecall(threshold=best_thresh).to(device)
     return (metric(y_pred, y_true) * 100).item()
 
 
-def brier_fn(y_true, y_logits):
+def brier_fn(y_true, y_probs):
     """
     Calculate Brier Score
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    y_pred_probs = torch.sigmoid(y_logits)
-    y_true, y_pred_probs = y_true.numpy(), y_pred_probs.numpy()
-    return brier_score_loss(y_true, y_pred_probs) * 100
+    y_true, y_probs = y_true.detach().cpu().numpy(), y_probs.detach().cpu().numpy()
+    return brier_score_loss(y_true, y_probs) * 100
 
 
-def ks_fn(y_true, y_logits):
+def ks_fn(y_true, y_probs):
     """
     Calculate the KS-Statistic
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    y_true = pd.Series(y_true.numpy())
-    y_pred_probs = torch.sigmoid(y_logits)
-    y_pred_probs = pd.Series(y_pred_probs.numpy())
-    y_true = pd.concat([y_true, y_pred_probs], axis=1)
+    y_true = pd.Series(y_true.detach().cpu().numpy())
+    y_probs = pd.Series(y_probs.detach().cpu().numpy())
+    y_true = pd.concat([y_true, y_probs], axis=1)
     y_true.columns = ['y_test_class_actual', 'y_hat_test_proba']
     y_true.sort_values('y_hat_test_proba', inplace=True)
     y_true.reset_index(drop=True, inplace=True)
@@ -195,38 +193,36 @@ def ks_fn(y_true, y_logits):
     y_true['Cumulative Perc Population'] = y_true['Cumulative N Population'] / y_true.shape[0]
     y_true['Cumulative Perc Bad'] = y_true['Cumulative N Bad'] / y_true['y_test_class_actual'].sum()
     y_true['Cumulative Perc Good'] = y_true['Cumulative N Good'] / (
-            y_true.shape[0] - y_true['y_test_class_actual'].sum())
+                y_true.shape[0] - y_true['y_test_class_actual'].sum())
     KS = max(y_true['Cumulative Perc Good'] - y_true['Cumulative Perc Bad'])
+
     return KS * 100
 
 
-def prob_diff_fn(y_true, y_logits):
+def prob_diff_fn(y_true, y_probs):
     """
     Calculate the difference between the median predicted probabilities of the two classes
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    y_true = pd.Series(y_true.numpy())
-    y_pred_probs = torch.sigmoid(y_logits)
-    y_pred_probs = pd.Series(y_pred_probs.numpy())
-    y_true = pd.concat([y_true, y_pred_probs], axis=1)
+    y_true, y_probs = pd.Series(y_true.detach().cpu().numpy()), pd.Series(y_probs.detach().cpu().numpy())
+    y_true = pd.concat([y_true, y_probs], axis=1)
     y_true.columns = ['y_test_class_actual', 'y_hat_test_proba']
-    prob_density_diff = y_true.loc[y_true['y_test_class_actual'] == 1, 'y_hat_test_proba'].median() - y_true.loc[
-        y_true['y_test_class_actual'] == 0, 'y_hat_test_proba'].median()
+    prob_density_diff = y_true.loc[y_true['y_test_class_actual'] == 1, 'y_hat_test_proba'].median() - y_true.loc[y_true['y_test_class_actual'] == 0, 'y_hat_test_proba'].median()
     return prob_density_diff * 100
 
 
-def f1_score_fn(y_true, y_pred, y_logits):
+def f1_score_fn(y_true, y_pred, y_probs):
     """
     Calculate F1-Score
     :param y_true: A tensor of ground truth values, in credit scoring 0 or 1 values indicating if the borrower was liquidated in some period
     :param y_pred: A tensor of predicted values, in credit scoring 0 or 1 values indicating if the borrower would be liquidated in some period
-    :param y_logits: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
+    :param y_probs: A tensor of predicted probabilities, in credit scoring the probability of the borrower being liquidated in some period (between 0 and 1)
     :return:
     """
-    best_thresh = auc_fn(y_true, y_logits)
-    metric = BinaryF1Score(threshold=best_thresh)
+    best_thresh = auc_fn(y_true, y_probs)
+    metric = BinaryF1Score(threshold=best_thresh).to(device)
     return (metric(y_pred, y_true) * 100).item()
 
 
@@ -460,3 +456,18 @@ class ValidationLossEarlyStopping:
             if self.counter >= self.patience:
                 return True
         return False
+
+
+
+def predict_on_test_sample(row, training_cols, model):
+    """
+    Given a single row comprised of a wallet address and the features,
+    Generate a prediction for the probability of liquidation.
+    :param row:
+    :return: wallet_address, prediction
+    """
+    wallet_address = row['wallet_address']
+    input_for_prediction = torch.tensor(row[training_cols].astype(float).to_numpy()).float()
+    with torch.no_grad():
+        prediction = model(input_for_prediction)
+    return wallet_address, prediction.item(), input_for_prediction
