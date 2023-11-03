@@ -79,7 +79,9 @@ You should see a message stating "Spectral CLI is configured!"
 
 ### Download Data, Start Modeling, and Prepare Submissions
 
-[See this notebook for quickstart and a walkthrough of the entire process](./modeler_starter_kit.ipynb)
+After configuration, you are ready to begin exploring the dataset and training your model!
+
+[See this notebook for a walkthrough of the entire process](./modeler_starter_kit.ipynb)
 
 ## Getting Help
 Reach out to us on Discord or Twitter if you have any questions
