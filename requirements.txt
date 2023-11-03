@@ -20,6 +20,8 @@ click==8.1.7
 cloudpickle==3.0.0
 coloredlogs==15.0.1
 comm==0.1.4
+contourpy==1.1.1
+cycler==0.12.1
 cytoolz==0.12.2
 debugpy==1.8.0
 decorator==5.1.1
@@ -38,6 +40,7 @@ ezkl==3.9.3
 fastjsonschema==2.18.1
 filelock==3.13.1
 flatbuffers==23.5.26
+fonttools==4.43.1
 fqdn==1.5.1
 frozenlist==1.4.0
 fsspec==2023.10.0
@@ -67,8 +70,10 @@ jupyterlab==4.0.7
 jupyterlab-pygments==0.2.2
 jupyterlab-widgets==3.0.9
 jupyterlab_server==2.25.0
+kiwisolver==1.4.5
 lru-dict==1.2.0
 MarkupSafe==2.1.3
+matplotlib==3.8.1
 matplotlib-inline==0.1.6
 mistune==3.0.2
 mpmath==1.3.0
@@ -102,6 +107,7 @@ pyarrow==14.0.0
 pycparser==2.21
 pycryptodome==3.19.0
 Pygments==2.16.1
+pyparsing==3.1.1
 python-dateutil==2.8.2
 python-json-logger==2.0.7
 pytz==2023.3.post1
@@ -118,6 +124,7 @@ rfc3339-validator==0.1.4
 rfc3986-validator==0.1.1
 rlp==3.0.0
 rpds-py==0.10.6
+seaborn==0.13.0
 Send2Trash==1.8.2
 six==1.16.0
 sniffio==1.3.0
