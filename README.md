@@ -43,13 +43,34 @@ cd challenge-1-modeler-starter-kit
 Create and activate a new virtual env
 ```
 python3 -m venv env
+```
+
+Activate the environment
+
+On macOS and Linux
+```
 source env/bin/activate
+```
+
+On Windows **Kevin (or other windows users) check this**
+```
+.\venv\Scripts\activate
 ```
 
 Install the required packages
 ```
 pip install -r requirements.txt
 ```
+
+If you are using macOS or linux ensure you have llvm and libomp installed. You can install it with homebrew/linuxbrew.
+```
+brew install llvm
+brew install libomp
+```
+If using Windows see the following [guide](https://llvm.org/docs/GettingStartedVS.html) for installing llvm.
+
+
+
 
 If using an application like PyCharm, be sure to set the python interpreter to the virtual env you just created.
 
