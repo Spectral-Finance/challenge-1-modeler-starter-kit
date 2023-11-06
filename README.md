@@ -69,11 +69,8 @@ spectral-cli configure
 ```
 Follow the instructions in terminal to configure the cli.
 
-After associating your cli wallet and Alchemy API key, run the following command again to verify setup is complete. 
-```
-spectral-cli configure 
-```
-You should see a message stating "Spectral CLI is configured!"
+
+You should see a message stating "Config has been updated. Spectral CLI is configured!"
 
 
 
