@@ -55,13 +55,6 @@ If using an application like PyCharm, be sure to set the python interpreter to t
 
 ### Spectral cli setup
 
-
-Confirm the cli is installed by running
-```
-spectral-cli --help  
-```
-If you see the help menu, you're good to go!
-
 To configure the CLI you'll first need to sign up for free accounts on **TODO: insert link to Spectral site** and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
 
 ```
