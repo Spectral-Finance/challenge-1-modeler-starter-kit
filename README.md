@@ -82,6 +82,12 @@ After configuration, you are ready to begin exploring the dataset and training y
 
 [See this notebook for a walkthrough of the entire process](./modeler_starter_kit.ipynb)
 
+It is recommended to open this notebook in an IDE like PyCharm,
+or run the jupyter notebook in browser using the following command in terminal:
+```
+jupyter lab
+```
+
 ## Getting Help
 Reach out to us on Discord or Twitter if you have any questions
 * [Discord](https://discord.com/invite/Vqwhxva7Y2)
