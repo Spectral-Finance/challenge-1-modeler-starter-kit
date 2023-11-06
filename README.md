@@ -34,6 +34,8 @@ This repo aims to help participants understand the following components of the c
 
 
 ### Project setup and requirements
+The recommended Python version is 3.11.5
+
 First, clone the repository
 ```
 git clone https://github.com/Spectral-Finance/challenge-1-modeler-starter-kit.git
