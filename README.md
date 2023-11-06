@@ -65,7 +65,7 @@ Follow the instructions in terminal to configure the cli.
 
 You should see a message stating:
 
-"Config has been updated. Spectral CLI is configured!"
+"Config has been updated. You can fetch training data now."
 
 
 
