@@ -1,21 +1,25 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+import random
+import warnings
 
-from sklearn.preprocessing import StandardScaler
+
 from sklearn.model_selection import StratifiedKFold
-from sklearn.model_selection import train_test_split
 from sklearn.metrics import auc, brier_score_loss
-from torchmetrics.classification import BinaryROC, BinaryRecall, BinaryF1Score, BinaryAUROC, BinaryPrecisionRecallCurve
+
 
 import torch
-import torch.nn as nn
-import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
+from torchmetrics.classification import (BinaryROC,
+                                         BinaryRecall,
+                                         BinaryF1Score,
+                                         BinaryAUROC,
+                                         BinaryPrecisionRecallCurve)
 
-import json
-from tqdm.auto import tqdm
-from timeit import default_timer as timer
+
+
 
 # for reproducible results
 random_seed = 42
@@ -23,7 +27,7 @@ np.random.seed(random_seed)
 torch.manual_seed(random_seed)
 torch.use_deterministic_algorithms(True, warn_only=True)
 torch.backends.cudnn.determenistic=True
-import random
+
 random.seed(random_seed)
 def seed_worker(worker_id):
     worker_seed = random_seed
@@ -31,13 +35,11 @@ def seed_worker(worker_id):
     random.seed(worker_seed)
 g = torch.Generator()
 g.manual_seed(random_seed)
-import os
+
 os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:8" #specifically required for reproducibility with CuBLABS and CUDA
 os.environ["PYTHONHASHSEED"] = str(random_seed)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-
 
 
 class StratifiedBatchSampler:
@@ -226,7 +228,6 @@ def f1_score_fn(y_true, y_pred, y_probs):
     return (metric(y_pred, y_true) * 100).item()
 
 
-# model training function
 def train_step(model: torch.nn.Module,
                data_loader: torch.utils.data.DataLoader,
                epochs: int,
@@ -241,7 +242,24 @@ def train_step(model: torch.nn.Module,
                ks_fn,
                prob_diff_fn,
                device: torch.device = device):
-    import warnings
+    """
+    Training function for the model provided in the starter kit
+    :param model:
+    :param data_loader:
+    :param epochs:
+    :param loss_fn:
+    :param optimizer:
+    :param auc_fn:
+    :param recall_fn:
+    :param f1_score_fn:
+    :param auroc_fn:
+    :param brier_fn:
+    :param auc_pr_fn:
+    :param ks_fn:
+    :param prob_diff_fn:
+    :param device:
+    :return:
+    """
     warnings.simplefilter('ignore')
     train_loss, train_rec, train_f1, train_auroc, train_brier, train_aucpr, train_ks, train_prob_diff = 0, 0, 0, 0, 0, 0, 0, 0
     for batch, (X, y) in enumerate(data_loader):
@@ -295,7 +313,6 @@ def train_step(model: torch.nn.Module,
             'prob_diff': train_prob_diff}
 
 
-# model testing function
 def test_step(data_loader: torch.utils.data.DataLoader,
               model: torch.nn.Module,
               loss_fn: torch.nn.Module,
@@ -309,7 +326,23 @@ def test_step(data_loader: torch.utils.data.DataLoader,
               ks_fn,
               prob_diff_fn,
               device: torch.device = device):
-    import warnings
+    """
+    Test step for the example model in the starter kit
+    :param data_loader:
+    :param model:
+    :param loss_fn:
+    :param epochs:
+    :param auc_fn:
+    :param recall_fn:
+    :param f1_score_fn:
+    :param auroc_fn:
+    :param brier_fn:
+    :param auc_pr_fn:
+    :param ks_fn:
+    :param prob_diff_fn:
+    :param device:
+    :return:
+    """
     warnings.simplefilter('ignore')
     test_loss, test_rec, test_f1, test_auroc, test_brier, test_aucpr, test_ks, test_prob_diff = 0, 0, 0, 0, 0, 0, 0, 0
     model.eval()  # put model in eval mode
@@ -381,7 +414,7 @@ def eval_model(model: torch.nn.Module,
     Returns:
         (dict): Results of model making predictions on data_loader.
     """
-    import warnings
+
     warnings.simplefilter('ignore')
     loss, rec, f1, auroc, brier, aucpr, ks, prob_diff = 0, 0, 0, 0, 0, 0, 0, 0
     model.eval()
@@ -426,6 +459,13 @@ def eval_model(model: torch.nn.Module,
 
 # Plot the loss curves
 def plot_loss_curves(epoch_count, train_loss_values, test_loss_values):
+    """
+    Plot the loss curves for the training and test set loss, where x is the epoch and y is the loss
+    :param epoch_count:
+    :param train_loss_values:
+    :param test_loss_values:
+    :return:
+    """
     plt.plot(epoch_count, train_loss_values, label='Train loss')
     plt.plot(epoch_count, test_loss_values, label='Test loss')
     plt.title('Training and test loss curves')
