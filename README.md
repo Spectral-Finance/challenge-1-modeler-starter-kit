@@ -11,7 +11,7 @@ While traditional finance relies on credit scores to gauge the risk of default, 
 Your goal is to predict liquidation (as per binary classification) of an active borrower on Aave v2 Ethereum and Compound v2 Ethereum using PyTorch. Liquidation here includes both:
 
 * Actual liquidation, when a borrower’s health factor drops below the liquidation threshold, triggering a liquidation event; AND
-* Technical liquidation, when a borrower’s health factor drops below a specific threshold.
+* Technical liquidation, when a borrower’s health factor drops below 1.2.
 
 
 See the [announcement page](https://blog.spectral.finance/challenge-1-credit-scoring-web3/) for more details on the importance of this problem and challenge design.
