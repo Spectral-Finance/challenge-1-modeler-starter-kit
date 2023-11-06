@@ -70,7 +70,9 @@ spectral-cli configure
 Follow the instructions in terminal to configure the cli.
 
 
-You should see a message stating "Config has been updated. Spectral CLI is configured!"
+You should see a message stating:
+
+"Config has been updated. Spectral CLI is configured!"
 
 
 
