@@ -44,7 +44,7 @@ cd challenge-1-modeler-starter-kit
 
 Create and activate a new virtual env
 ```
-python3 -m venv env
+python -m venv env
 ```
 
 Activate the environment
