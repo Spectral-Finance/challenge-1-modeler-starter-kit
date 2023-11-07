@@ -34,7 +34,7 @@ This repo aims to help participants understand the following components of the c
 
 
 ### Project setup and requirements
-The recommended Python version is 3.11.5
+The recommended Python version is 3.11.6
 
 First, clone the repository
 ```
