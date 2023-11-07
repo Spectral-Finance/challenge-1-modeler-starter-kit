@@ -63,9 +63,9 @@ Install the required packages
 ```
 pip install -r requirements.txt
 ```
-macOS and linux users:
+macOS and linux users ensure you have llvm and libomp installed.
 
-ensure you have llvm and libomp installed. You can install it with homebrew/linuxbrew.
+If not already installed, you may install with homebrew/linuxbrew.
 ```
 brew install llvm
 brew install libomp
