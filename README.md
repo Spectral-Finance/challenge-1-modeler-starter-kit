@@ -69,6 +69,9 @@ If you are using macOS or linux ensure you have llvm and libomp installed. You c
 brew install llvm
 brew install libomp
 ```
+
+**See if this is required for windows users**
+
 If using Windows see the following [guide](https://llvm.org/docs/GettingStartedVS.html) for installing llvm.
 
 
@@ -103,6 +106,8 @@ or run the jupyter notebook in browser using the following command in terminal:
 ```
 jupyter lab
 ```
+
+This notebook will create example files required for submission, which you can use as a template for your own submission.
 
 ## Getting Help
 Reach out to us on Discord or Twitter if you have any questions
