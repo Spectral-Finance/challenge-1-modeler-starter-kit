@@ -63,18 +63,13 @@ Install the required packages
 ```
 pip install -r requirements.txt
 ```
+macOS and linux users:
 
-If you are using macOS or linux ensure you have llvm and libomp installed. You can install it with homebrew/linuxbrew.
+ensure you have llvm and libomp installed. You can install it with homebrew/linuxbrew.
 ```
 brew install llvm
 brew install libomp
 ```
-
-**See if this is required for windows users**
-
-If using Windows see the following [guide](https://llvm.org/docs/GettingStartedVS.html) for installing llvm.
-
-
 
 
 If using an application like PyCharm, be sure to set the python interpreter to the virtual env you just created.
