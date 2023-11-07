@@ -54,9 +54,9 @@ On macOS and Linux
 source env/bin/activate
 ```
 
-On Windows **Kevin (or other windows users) check this**
+On Windows **Kevin **
 ```
-.\venv\Scripts\activate
+source env/Scripts/activate
 ```
 
 Install the required packages
