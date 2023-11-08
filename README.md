@@ -18,10 +18,10 @@ See the [announcement page](https://blog.spectral.finance/challenge-1-credit-sco
 
 ## Goals
 This repo aims to help participants understand the following components of the challenge:
-1. Using the Spectral cli
+1. Using the Spectral CLI
 2. The training dataset
 3. The submission format
-4. ZKML with ezkl
+4. Leveraging zero knowledge machine learning (implicit in this Starter Kit)
 
 
 ## Status
@@ -54,7 +54,7 @@ On macOS and Linux
 source env/bin/activate
 ```
 
-On Windows **Kevin **
+On Windows
 ```
 source env/Scripts/activate
 ```
@@ -74,14 +74,14 @@ brew install libomp
 
 If using an application like PyCharm, be sure to set the python interpreter to the virtual env you just created.
 
-### Spectral cli setup
+### Spectral CLI setup
 
 To configure the CLI you'll first need to sign up for free accounts on **TODO: insert link to Spectral site** and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
 
 ```
 spectral-cli configure
 ```
-Follow the instructions in terminal to configure the cli.
+Follow the instructions in terminal to configure the CLI.
 
 
 You should see a message stating:
@@ -105,13 +105,7 @@ jupyter lab
 This notebook will create example files required for submission, which you can use as a template for your own submission.
 
 ## Getting Help
-Reach out to us on Discord or Twitter if you have any questions
-* [Discord](https://discord.com/invite/Vqwhxva7Y2)
-* [Twitter](https://twitter.com/SpectralFi)
-
-If you encounter an issue in this repo [create an issue.](https://github.com/Spectral-Finance/challenge-1-modeler-starter-kit/issues/new)
-
-
+Reach out to us on [Discord](https://discord.com/invite/Vqwhxva7Y2) if you have any questions.
 
 ## Acknowledgements
 This work would not be possible without the contributions from the following teams:
