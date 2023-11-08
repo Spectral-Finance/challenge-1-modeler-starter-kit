@@ -34,7 +34,9 @@ This repo aims to help participants understand the following components of the c
 
 
 ### Project setup and requirements
-The recommended Python version is 3.11.6
+We strongly recommend interacting with the Spectral CLI in an isolated virtual environment using Python 3.11.6.
+
+
 
 First, clone the repository
 ```
@@ -59,11 +61,13 @@ On Windows
 source env/Scripts/activate
 ```
 
-Install the required packages
+Install the required packages. 
+
+These packages are required to analyze the dataset in the starter kit, and to train an example model.  
 ```
 pip install -r requirements.txt
 ```
-macOS and linux users ensure you have llvm and libomp installed.
+macOS and linux users ensure you have llvm and libomp installed to use PyTorch.
 
 If not already installed, you may install with homebrew/linuxbrew.
 ```
@@ -94,13 +98,15 @@ You should see a message stating:
 
 After configuration, you are ready to begin exploring the dataset and training your model!
 
-[See this notebook for a walkthrough of the entire process](./modeler_starter_kit.ipynb)
-
 For a seamless experience it is recommended to open this notebook in an IDE like PyCharm,
 or run the jupyter notebook in browser using the following command in terminal:
 ```
 jupyter lab
 ```
+
+
+[See this notebook for a walkthrough of the entire process](./modeler_starter_kit.ipynb)
+
 
 This notebook will create example files required for submission, which you can use as a template for your own submission.
 
