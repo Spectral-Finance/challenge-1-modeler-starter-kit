@@ -115,11 +115,20 @@ Reach out to us on [Discord](https://discord.com/invite/Vqwhxva7Y2) if you have 
 ## Acknowledgements
 This work would not be possible without the contributions from the following teams:
 * [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
+  * Powerful set of APIs, SDKs, and tools to build and scale your web3 app with ease.
 * [Cryo](https://github.com/paradigmxyz/cryo?ref=github.spectral.finance)
+  * Efficient EVM data extraction tools. 
 * [DuckDB](https://duckdb.org/)
+  * In-process SQL OLAP database management system.
 * [Erigon](https://erigon.ch/?ref=github.spectral.finance)
+  * Implementation of Ethereum (execution layer with embeddable consensus layer)
 * [ezkl](https://github.com/zkonduit/ezkl?ref=github.spectral.finance)
+  * An engine for doing inference for deep learning models and other computational graphs in a zk-snark.
 * [The Graph](https://thegraph.com/?ref=github.spectral.finance)
-* [Messari](https://subgraphs.messari.io/?ref=github.spectral.finance)
-* [Reth](https://github.com/paradigmxyz/reth?ref=github.spectral.finance)
-* [Transpose](https://www.transpose.io/?ref=github.spectral.finance)
+  *  A decentralized protocol for indexing and querying blockchain data.
+* [Messari Subgraphs](https://subgraphs.messari.io/?ref=github.spectral.finance) 
+  * Core Subgraph Developer for The Graph.
+* [Reth](https://github.com/paradigmxyz/reth?ref=github.spectral.finance) 
+  * Modular, contributor-friendly and blazing-fast implementation of the Ethereum protocol.
+* [Transpose](https://www.transpose.io/?ref=github.spectral.finance) 
+  * Indexed real-time blockchain data with powerful integration options. 
