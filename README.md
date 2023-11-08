@@ -76,16 +76,16 @@ brew install libomp
 ```
 
 
-If using an application like PyCharm, be sure to set the python interpreter to the virtual env you just created.
+If using an application like PyCharm, be sure to set the Python interpreter to the virtual env you just created.
 
 ### Spectral CLI setup
 
-To configure the CLI you'll first need to sign up for free accounts on **TODO: insert link to Spectral site** and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
+To configure the Spectral CLI you'll first need to sign up for free accounts on **TODO: insert link to Spectral site** and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
 
 ```
 spectral-cli configure
 ```
-Follow the instructions in terminal to configure the CLI.
+Follow the instructions in terminal to configure the Spectral CLI.
 
 
 You should see a message stating:
