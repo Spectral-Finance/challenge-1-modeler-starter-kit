@@ -64,20 +64,20 @@ source env/Scripts/activate
 
 Install the required packages. 
 
-These packages are required to analyze the dataset in the starter kit, and to train an example model.  
+These packages are required to analyze the dataset in the starter kit and to train an example model.  
 ```
 pip install -r requirements.txt
 ```
-macOS and linux users ensure you have llvm and libomp installed to use PyTorch.
+macOS and Linux users ensure you have llvm and libomp installed to use PyTorch.
 
-If not already installed, you may install with homebrew/linuxbrew.
+If not already installed, you may install them with homebrew/linuxbrew.
 ```
 brew install llvm
 brew install libomp
 ```
 
 
-If using an application like PyCharm, be sure to set the Python interpreter to the virtual env you just created.
+If using an application like PyCharm, be sure to set the Python interpreter to the virtual environment you just created.
 
 ### Spectral CLI setup
 
@@ -99,8 +99,8 @@ You should see a message stating:
 
 After configuration, you are ready to begin exploring the dataset and training your model!
 
-For a seamless experience it is recommended to open this notebook in an IDE like PyCharm,
-or run the jupyter notebook in browser using the following command in terminal:
+For a seamless experience, it is recommended to open this notebook in an IDE like PyCharm,
+or run the jupyter notebook in a browser using the following command in terminal:
 ```
 jupyter lab
 ```
@@ -121,7 +121,7 @@ This work would not be possible without the contributions from the following tea
 * [DuckDB](https://duckdb.org/)
   * In-process SQL OLAP database management system.
 * [Erigon](https://erigon.ch/?ref=github.spectral.finance)
-  * Implementation of Ethereum (execution layer with embeddable consensus layer)
+  * Implementation of Ethereum (execution layer with embeddable consensus layer).
 * [ezkl](https://github.com/zkonduit/ezkl?ref=github.spectral.finance)
   * An engine for doing inference for deep learning models and other computational graphs in a zk-snark.
 * [The Graph](https://thegraph.com/?ref=github.spectral.finance)
@@ -129,6 +129,6 @@ This work would not be possible without the contributions from the following tea
 * [Messari Subgraphs](https://subgraphs.messari.io/?ref=github.spectral.finance) 
   * Core Subgraph Developer for The Graph.
 * [Reth](https://github.com/paradigmxyz/reth?ref=github.spectral.finance) 
-  * Modular, contributor-friendly and blazing-fast implementation of the Ethereum protocol.
+  * Modular, contributor-friendly, and blazing-fast implementation of the Ethereum protocol.
 * [Transpose](https://www.transpose.io/?ref=github.spectral.finance) 
   * Indexed real-time blockchain data with powerful integration options. 
