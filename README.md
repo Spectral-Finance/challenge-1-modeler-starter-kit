@@ -29,14 +29,14 @@ This repo aims to help participants understand the following components of the c
 **This version is for internal testing only and is not suitable for public release.** 
 
 
-
 ## For Developers
 
 
 ### Project setup and requirements
 We strongly recommend interacting with the Spectral CLI in an isolated virtual environment using Python 3.11.6.
 
-To manage multiple versions of Python on your local machine we recommend [asdf](https://asdf-vm.com/) although this is not a requirement. 
+To manage multiple versions of Python on your local machine we recommend [asdf](https://asdf-vm.com/) although this is not a requirement.
+
 
 
 First, clone the repository
@@ -116,6 +116,7 @@ Reach out to us on [Discord](https://discord.com/invite/Vqwhxva7Y2) if you have 
 This work would not be possible without the contributions from the following teams:
 * [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
 * [Cryo](https://github.com/paradigmxyz/cryo?ref=github.spectral.finance)
+* [DuckDB](https://duckdb.org/)
 * [Erigon](https://erigon.ch/?ref=github.spectral.finance)
 * [ezkl](https://github.com/zkonduit/ezkl?ref=github.spectral.finance)
 * [The Graph](https://thegraph.com/?ref=github.spectral.finance)
