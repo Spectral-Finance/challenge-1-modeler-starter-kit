@@ -36,6 +36,7 @@ This repo aims to help participants understand the following components of the c
 ### Project setup and requirements
 We strongly recommend interacting with the Spectral CLI in an isolated virtual environment using Python 3.11.6.
 
+To manage multiple versions of Python on your local machine we recommend [asdf](https://asdf-vm.com/) although this is not a requirement. 
 
 
 First, clone the repository
@@ -80,7 +81,7 @@ If using an application like PyCharm, be sure to set the Python interpreter to t
 
 ### Spectral CLI setup
 
-To configure the Spectral CLI you'll first need to sign up for free accounts on **TODO: insert link to Spectral site** and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
+To configure the Spectral CLI you'll first need to sign up for free accounts on [Spectral](https://www.app.dev.spectral.finance/profile) and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
 
 ```
 spectral-cli configure
@@ -104,9 +105,7 @@ or run the jupyter notebook in browser using the following command in terminal:
 jupyter lab
 ```
 
-
 [See this notebook for a walkthrough of the entire process](./modeler_starter_kit.ipynb)
-
 
 This notebook will create example files required for submission, which you can use as a template for your own submission.
 
