@@ -496,18 +496,3 @@ class ValidationLossEarlyStopping:
             if self.counter >= self.patience:
                 return True
         return False
-
-
-
-def predict_on_test_sample(row, training_cols, model):
-    """
-    Given a single row comprised of a wallet address and the features,
-    Generate a prediction for the probability of liquidation.
-    :param row:
-    :return: wallet_address, prediction
-    """
-    wallet_address = row['wallet_address']
-    input_for_prediction = torch.tensor(row[training_cols].astype(float).to_numpy()).float()
-    with torch.no_grad():
-        prediction = model(input_for_prediction)
-    return wallet_address, prediction.item(), input_for_prediction
