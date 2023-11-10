@@ -46,12 +46,11 @@ This repo aims to help participants understand the following components of the c
 ## For Developers
 
 
-### Project setup and requirements
-We strongly recommend interacting with the Spectral CLI in an isolated virtual environment using Python 3.11.6.
+### Prepare Your Environment
 
-To manage multiple versions of Python on your local machine we recommend [asdf](https://asdf-vm.com/) although this is not a requirement.
+#### We strongly recommend interacting with the Spectral CLI in an isolated virtual environment using Python 3.11.6.
 
-
+To manage multiple versions of Python on a single machine we recommend [asdf](https://asdf-vm.com/).
 
 First, clone the repository
 ```
@@ -59,7 +58,7 @@ git clone https://github.com/Spectral-Finance/challenge-1-modeler-starter-kit.gi
 cd challenge-1-modeler-starter-kit
 ```
 
-Create and activate a new virtual env
+Create a new virtual env
 ```
 python -m venv env
 ```
@@ -75,6 +74,7 @@ On Windows
 ```
 source env/Scripts/activate
 ```
+
 
 Install the required packages. 
 
@@ -93,19 +93,26 @@ brew install libomp
 
 If using an application like PyCharm, be sure to set the Python interpreter to the virtual environment you just created.
 
-### Spectral CLI setup
+[//]: # (### Spectral CLI setup)
 
-To configure the Spectral CLI you'll first need to sign up for free accounts on [Spectral](https://www.app.dev.spectral.finance/profile) and [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
+[//]: # ()
+[//]: # (To configure the Spectral CLI you'll first need to sign up for free accounts on [Spectral]&#40;https://www.app.dev.spectral.finance/profile&#41; and [Alchemy]&#40;https://www.alchemy.com/?ref=github.spectral.finance&#41;)
 
-```
-spectral-cli configure
-```
-Follow the instructions in terminal to configure the Spectral CLI.
+[//]: # ()
+[//]: # (```)
 
+[//]: # (spectral-cli configure)
 
-You should see a message stating:
+[//]: # (```)
 
-"Config has been updated. You can fetch training data now."
+[//]: # (Follow the instructions in terminal to configure the Spectral CLI.)
+
+[//]: # ()
+[//]: # ()
+[//]: # (You should see a message stating:)
+
+[//]: # ()
+[//]: # ("Config has been updated. You can fetch training data now.")
 
 
 
@@ -124,6 +131,8 @@ jupyter lab
 This notebook will create example files required for submission, which you can use as a template for your own submission.
 
 ## Getting Help
+If you have any questions, first see if the answer to your question can be found in the [Gitbook](https://docs.spectral.finance/).
+
 Reach out to us on [Discord](https://discord.com/invite/Vqwhxva7Y2) if you have any questions.
 
 ## Resources
