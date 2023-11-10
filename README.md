@@ -1,5 +1,10 @@
 # Challenge 1 Modeler Starter Kit
-**Technical Introduction to the 2023 Decentralized Credit Scoring in Web3 Challenge and Spectral Platform** 
+**Technical Introduction to the 2023 Decentralized Credit Scoring in Web3 Challenge and Spectral Platform**
+
+**[Gitbook](https://docs.spectral.finance/)**
+| **[Website](https://www.spectral.finance/)**
+| **[Discord](https://discord.com/invite/Vqwhxva7Y2)**
+| **[Announcement](https://blog.spectral.finance/challenge-1-credit-scoring-web3/)**
 
 ![](./assets/challenge-1-hero.png)
 
@@ -15,6 +20,9 @@ Your goal is to predict liquidation (as per binary classification) of an active 
 
 
 See the [announcement page](https://blog.spectral.finance/challenge-1-credit-scoring-web3/) for more details on the importance of this problem and challenge design.
+
+Our [Gitbook](https://docs.spectral.finance/) contains the most comprehensive information on the tooling required to participate in this challenge,
+along with an overview of the technical architecture of the Spectral platform.
 
 ## Goals
 This repo aims to help participants understand the following components of the challenge:
