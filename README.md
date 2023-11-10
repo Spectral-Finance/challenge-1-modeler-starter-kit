@@ -2,8 +2,10 @@
 **Technical Introduction to the 2023 Decentralized Credit Scoring in Web3 Challenge and Spectral Platform**
 
 **[Gitbook](https://docs.spectral.finance/)**
-| **[Website](https://www.spectral.finance/)**
+| **[Website](https://www.app.dev.spectral.finance/challenges/QmXwAbCDeFgH1234567890)**
 | **[Discord](https://discord.com/invite/Vqwhxva7Y2)**
+| **[Slack](https://join.slack.com/t/spectralcommunity/shared_invite/zt-270pp4l2p-gR8KfjQ9hQEv11h_tyCuTQ)**
+| **[Twitter](https://twitter.com/SpectralFI)**
 | **[Announcement](https://blog.spectral.finance/challenge-1-credit-scoring-web3/)**
 
 ![](./assets/challenge-1-hero.png)
@@ -36,6 +38,10 @@ This repo aims to help participants understand the following components of the c
 
 **This version is for internal testing only and is not suitable for public release.** 
 
+**ZANE to do before making public**
+1. Check gitbook links
+2. Remove dev links and replace with prod
+3. Remove references to internal testing
 
 ## For Developers
 
@@ -119,6 +125,18 @@ This notebook will create example files required for submission, which you can u
 
 ## Getting Help
 Reach out to us on [Discord](https://discord.com/invite/Vqwhxva7Y2) if you have any questions.
+
+## Resources
+
+For context on how Spectral approached Credit Scoring Models in Web3, check out these blog posts:
+* [Introduction to the MACRO Score](https://blog.spectral.finance/introduction-to-macro-score/#:~:text=The%20MACRO%20Score%20uses%20liquidation,generally%20lower%20your%20MACRO%20Score.)
+* [A Deeper Look at the MACRO Score (Part 1)
+](https://blog.spectral.finance/a-deeper-look-at-the-macro-score-part-one/)
+* [A Deeper Look at the MACRO Score (Part 2)
+](https://blog.spectral.finance/a-deeper-look-at-the-macro-score-part-2/)
+
+
+
 
 ## Acknowledgements
 This work would not be possible without the contributions from the following teams:
