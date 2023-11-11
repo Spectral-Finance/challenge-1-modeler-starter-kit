@@ -3,7 +3,7 @@
 
 **[Gitbook](https://docs.spectral.finance/)**
 | **[Website](https://www.app.dev.spectral.finance/challenges/QmXwAbCDeFgH1234567890)**
-| **[Discord](https://discord.com/invite/Vqwhxva7Y2)**
+| **[Discord](https://discord.gg/w7mKT2KBKh)**
 | **[Slack](https://join.slack.com/t/spectralcommunity/shared_invite/zt-270pp4l2p-gR8KfjQ9hQEv11h_tyCuTQ)**
 | **[Twitter](https://twitter.com/SpectralFI)**
 | **[Announcement](https://blog.spectral.finance/challenge-1-credit-scoring-web3/)**
@@ -133,7 +133,7 @@ This notebook will create example files required for submission, which you can u
 ## Getting Help
 If you have any questions, first see if the answer to your question can be found in the [Gitbook](https://docs.spectral.finance/).
 
-Reach out to us on [Discord](https://discord.com/invite/Vqwhxva7Y2) if you have any questions.
+Reach out to us on [Discord](https://discord.gg/w7mKT2KBKh) if you have any questions.
 
 ## Resources
 
