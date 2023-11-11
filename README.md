@@ -20,6 +20,7 @@ Your goal is to predict liquidation (as per binary classification) of an active 
 * Actual liquidation, when a borrower’s health factor drops below the liquidation threshold, triggering a liquidation event; AND
 * Technical liquidation, when a borrower’s health factor drops below 1.2.
 
+Technically speaking, and to ensure numerical stability, we take the reciprocal of the health factor (which we call the risk factor) and use it in the features.
 
 See the [announcement page](https://blog.spectral.finance/challenge-1-credit-scoring-web3/) for more details on the importance of this problem and challenge design.
 
@@ -70,7 +71,7 @@ On macOS and Linux
 source env/bin/activate
 ```
 
-On Windows
+On Windows (running [Git Bash for Windows](https://gitforwindows.org/))
 ```
 source env/Scripts/activate
 ```
@@ -78,7 +79,7 @@ source env/Scripts/activate
 
 Install the required packages. 
 
-These packages are required to analyze the dataset in the starter kit and to train an example model.  
+These packages are required to analyze the dataset in this Starter Kit and to train an example model.  
 ```
 pip install -r requirements.txt
 ```
