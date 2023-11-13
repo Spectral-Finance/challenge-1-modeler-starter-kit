@@ -39,11 +39,6 @@ This repo aims to help participants understand the following components of the c
 
 **This version is for internal testing only and is not suitable for public release.** 
 
-**ZANE to do before making public**
-1. Check gitbook links
-2. Remove dev links and replace with prod
-3. Remove references to internal testing
-
 ## For Developers
 
 
@@ -53,18 +48,21 @@ This repo aims to help participants understand the following components of the c
 
 To manage multiple versions of Python on a single machine we recommend [asdf](https://asdf-vm.com/).
 
-First, clone the repository
+##### First, clone the repository
 ```
 git clone https://github.com/Spectral-Finance/challenge-1-modeler-starter-kit.git
 cd challenge-1-modeler-starter-kit
 ```
 
-Create a new virtual env
+#### If you followed Gitbook installation steps 1-4 previously skip to "Install the required packages"
+It is not necessary to follow the gitbook installation process if you have not done so already. 
+
+##### Create a new virtual env
 ```
 python -m venv env
 ```
 
-Activate the environment
+##### Activate the environment
 
 On macOS and Linux
 ```
@@ -77,7 +75,7 @@ source env/Scripts/activate
 ```
 
 
-Install the required packages. 
+##### Install the required packages. 
 
 These packages are required to analyze the dataset in this Starter Kit and to train an example model.  
 ```
