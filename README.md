@@ -40,7 +40,8 @@ This repo aims to help participants understand the following components of the c
 
 ### Prepare Your Environment
 
-#### We strongly recommend interacting with the Spectral CLI in an isolated virtual environment using Python 3.11.6.
+#### Python 3.11.6 is required to use the Spectral CLI. 
+#### We strongly recommend interacting with the Spectral CLI in an isolated virtual environment.
 
 To manage multiple versions of Python on a single machine we recommend [asdf](https://asdf-vm.com/).
 
