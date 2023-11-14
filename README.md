@@ -35,10 +35,6 @@ This repo aims to help participants understand the following components of the c
 4. Leveraging zero knowledge machine learning (implicit in this Starter Kit)
 
 
-## Status
-
-**This version is for internal testing only and is not suitable for public release.** 
-
 ## For Developers
 
 
