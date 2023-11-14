@@ -1,5 +1,4 @@
-# Challenge 1 Modeler Starter Kit
-**Technical Introduction to the 2023 Decentralized Credit Scoring in Web3 Challenge and Spectral Platform**
+# Modeler Starter Kit: Technical Guide for the 2023 Decentralized Credit Scoring in Web3 Challenge on the Spectral Platform
 
 **[Gitbook](https://docs.spectral.finance/)**
 | **[Website](https://app.spectral.finance/challenges/QmXwAbCDeFgH1234567890)**
@@ -11,39 +10,39 @@
 ![](./assets/challenge-1-hero.png)
 
 
-## What is Challenge 1?
+## Introduction to the Challenge:
 
 While traditional finance relies on credit scores to gauge the risk of default, decentralized finance (DeFi) has been largely dependent on over-collateralization (i.e. the equivalent of a secured credit card). An effective on-chain credit score would improve capital efficiency and create a more inclusive, efficient DeFi ecosystem that could one day surpass traditional financial institutions.
 
-Your goal is to predict liquidation (as per binary classification) of an active borrower on Aave v2 Ethereum and Compound v2 Ethereum using PyTorch. Liquidation here includes both:
+Your objective is to predict the liquidation (binary classification) of an active borrower on Aave v2 Ethereum and Compound v2 Ethereum using PyTorch. Liquidation here includes both:
 
 * Actual liquidation, when a borrower’s health factor drops below the liquidation threshold, triggering a liquidation event; AND
 * Technical liquidation, when a borrower’s health factor drops below 1.2.
 
-Technically speaking, and to ensure numerical stability, we take the reciprocal of the health factor (which we call the risk factor) and use it in the features.
+For numerical stability, the reciprocal of the health factor (referred to as the risk factor) is used in the features.
 
-See the [announcement page](https://blog.spectral.finance/challenge-1-credit-scoring-web3/) for more details on the importance of this problem and challenge design.
+Refer to the [announcement page](https://blog.spectral.finance/challenge-1-credit-scoring-web3/) for additional details on the significance of this problem and the challenge design.
 
 Our [Gitbook](https://docs.spectral.finance/) contains the most comprehensive information on the tooling required to participate in this challenge,
 along with an overview of the technical architecture of the Spectral platform.
 
-## Goals
-This repo aims to help participants understand the following components of the challenge:
+## Goals:
+This repository aims to assist participants in understand the following components of the challenge:
 1. Using the Spectral CLI
 2. The training dataset
 3. The submission format
 4. Leveraging zero knowledge machine learning (implicit in this Starter Kit)
 
 
-## For Developers
+## For Developers:
 
 
 ### Prepare Your Environment
 
 #### Python 3.11.6 is required to use the Spectral CLI. 
-#### We strongly recommend interacting with the Spectral CLI in an isolated virtual environment.
+#### It is strongly recommended to interact with the Spectral CLI in an isolated virtual environment.
 
-To manage multiple versions of Python on a single machine we recommend [asdf](https://asdf-vm.com/).
+For managing multiple Python versions, consider using [asdf](https://asdf-vm.com/).
 
 ##### First, clone the repository
 ```
@@ -78,7 +77,7 @@ These packages are required to analyze the dataset in this Starter Kit and to tr
 ```
 pip install -r requirements.txt
 ```
-macOS and Linux users ensure you have llvm and libomp installed to use PyTorch.
+macOS and Linux users ensure you have llvm and libomp installed for PyTorch.
 
 If not already installed, you may install them with homebrew/linuxbrew.
 ```
@@ -112,28 +111,23 @@ If using an application like PyCharm, be sure to set the Python interpreter to t
 
 
 
-### Download Data, Start Modeling, and Prepare Submissions
+### Download Data, Start Modeling, and Prepare Submissions:
 
 After configuration, you are ready to begin exploring the dataset and training your model!
 
-For a seamless experience, it is recommended to open this notebook in an IDE like PyCharm,
-or run the jupyter notebook in a browser using the following command in terminal:
+For a seamless experience, open the notebook in an IDE like PyCharm or run the Jupyter notebook in a browser:
 ```
 jupyter lab
 ```
 
-[See this notebook for a walkthrough of the entire process](./modeler_starter_kit.ipynb)
+Refer to [this notebook](./modeler_starter_kit.ipynb) for a walkthrough of the entire process. The notebook will generate example files required for submission, serving as a template for your own submission.
 
-This notebook will create example files required for submission, which you can use as a template for your own submission.
+## Getting Help:
+If you have any questions, consult the [Gitbook](https://docs.spectral.finance/) for answers. For additional assistance, reach out to us on [Discord](https://discord.gg/w7mKT2KBKh).
 
-## Getting Help
-If you have any questions, first see if the answer to your question can be found in the [Gitbook](https://docs.spectral.finance/).
+## Resources:
 
-Reach out to us on [Discord](https://discord.gg/w7mKT2KBKh) if you have any questions.
-
-## Resources
-
-For context on how Spectral approached Credit Scoring Models in Web3, check out these blog posts:
+For context on how Spectral approached Credit Scoring Models in Web3, explore these blog posts:
 * [Introduction to the MACRO Score](https://blog.spectral.finance/introduction-to-macro-score)
 * [A Deeper Look at the MACRO Score (Part 1)
 ](https://blog.spectral.finance/a-deeper-look-at-the-macro-score-part-one/)
@@ -142,9 +136,8 @@ For context on how Spectral approached Credit Scoring Models in Web3, check out 
 
 
 
-
 ## Acknowledgements
-This work would not be possible without the contributions from the following teams:
+This work is indebted to the contributions from the following teams:
 * [Alchemy](https://www.alchemy.com/?ref=github.spectral.finance)
   * Powerful set of APIs, SDKs, and tools to build and scale your web3 app with ease.
 * [Cryo](https://github.com/paradigmxyz/cryo?ref=github.spectral.finance)
