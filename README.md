@@ -3,7 +3,7 @@
 
 **[Gitbook](https://docs.spectral.finance/)**
 | **[Website](https://app.spectral.finance/challenges/QmXwAbCDeFgH1234567890)**
-| **[Discord](https://discord.gg/w7mKT2KBKh)**
+| **[Discord](https://discord.gg/Z9ESSwy)**
 | **[Slack](https://join.slack.com/t/spectralcommunity/shared_invite/zt-270pp4l2p-gR8KfjQ9hQEv11h_tyCuTQ)**
 | **[Twitter](https://twitter.com/SpectralFi)**
 | **[Announcement](https://blog.spectral.finance/challenge-1-credit-scoring-web3/)**
@@ -124,7 +124,7 @@ jupyter lab
 Refer to [this notebook](./modeler_starter_kit.ipynb) for a walkthrough of the entire process. The notebook will generate example files required for submission, serving as a template for your own submission.
 
 ## Getting Help:
-If you have any questions, consult the [Gitbook](https://docs.spectral.finance/) for answers. For additional assistance, reach out to us on [Discord](https://discord.gg/w7mKT2KBKh).
+If you have any questions, consult the [Gitbook](https://docs.spectral.finance/) for answers. For additional assistance, reach out to us on [Discord](https://discord.gg/Z9ESSwy).
 
 ## Resources:
 
