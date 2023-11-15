@@ -1,4 +1,5 @@
-# Modeler Starter Kit: Technical Guide for the 2023 Decentralized Credit Scoring in Web3 Challenge on the Spectral Platform
+# Challenge 1 Modeler Starter Kit
+**Technical Introduction to the 2023 Web3 Credit Scoring Challenge on Spectral**
 
 **[Gitbook](https://docs.spectral.finance/)**
 | **[Website](https://app.spectral.finance/challenges/QmXwAbCDeFgH1234567890)**
@@ -27,7 +28,7 @@ Our [Gitbook](https://docs.spectral.finance/) contains the most comprehensive in
 along with an overview of the technical architecture of the Spectral platform.
 
 ## Goals:
-This repository aims to assist participants in understand the following components of the challenge:
+This repository aims to assist participants in understanding the following components of the challenge:
 1. Using the Spectral CLI
 2. The training dataset
 3. The submission format
