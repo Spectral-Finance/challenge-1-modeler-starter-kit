@@ -53,7 +53,7 @@ spectral-cli configure
 ```
 You will be prompted to enter your API keys and Privy address. 
 ```
-python baseline_submission.py
+python3 baseline_submission.py
 ```
 
 
