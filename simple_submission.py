@@ -245,11 +245,11 @@ def create_simple_submission():
 
     response = client.request_batch(test_set_addresses)
     test_set_with_features = pd.DataFrame(response)
-
+    print(f'Fetched {test_set_with_features.shape[1]} features for {test_set_with_features.shape[0]} addresses')
     testing_samples_scaled = sc.transform(test_set_with_features[training_cols])
 
+    print('Making predictions')
     model_1.eval()
-
     # Inference using the trained model
     with torch.inference_mode():
         pol = model_1(torch.tensor(testing_samples_scaled).float().to(device)).squeeze().detach().cpu().numpy()
@@ -278,6 +278,7 @@ def create_simple_submission():
     # Save the submission file
     submission_dataframe.to_parquet('submissions/submission.parquet', index=False)
 
+    print('Submitting predictions')
     # Zane uncomment when ready to submit
     # os.system("spectral-cli submit-inferences 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544 submissions/submission.parquet")
     print('submitted!')
