@@ -37,6 +37,28 @@ This repository aims to assist participants in understanding the following compo
 
 ## For Developers:
 
+You may choose to create an example submission with a baseline model, or walkthrough a detailed version in our starter kit. 
+
+### To create an example submission
+Run the following commands in terminal after cloning the repository.
+
+We're providing you with this code snippet to help you gain a quick understanding of the submission workflow on Spectral. 
+
+For more details on individual steps, please read through the below Starter Kit.
+
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+spectral-cli configure
+```
+You will be prompted to enter your API keys and Privy address. 
+```
+python simple_submission.py
+```
+
+
+### Detaiiled walkthrough
 
 ### Prepare Your Environment
 
