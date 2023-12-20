@@ -231,7 +231,7 @@ def create_simple_submission():
 
     print('Fetching features for test set, this will take several minutes')
 
-    if platform.system() != 'windows':
+    if platform.system() != 'Windows':
         config = configparser.ConfigParser()
         config.read_file(open(os.path.expanduser("~/.spectral/config.ini")))
     else:
