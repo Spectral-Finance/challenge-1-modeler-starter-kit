@@ -11,6 +11,7 @@ import json
 from tqdm.auto import tqdm
 from timeit import default_timer as timer
 import random
+import time
 import os
 import platform
 from spectral_datawrappers.credit_scoring.credit_scoring_wrapper import CreditScoringWrapper
@@ -61,7 +62,7 @@ def seed_worker():
     random.seed(worker_seed)
 
 
-def create_simple_submission():
+def create_baseline_submission():
     """
     This function will download the training data, train a model, and submit the predictions.
     This is to demonstrate how you can create an example submission using the Spectral CLI.
@@ -219,10 +220,10 @@ def create_simple_submission():
     json.dump(data, open('submissions/model_1_calibration.json', 'w'))
 
 
-    # Zane uncomment when ready to commit
-    # os.system("spectral-cli commit submissions/model_1.onnx submissions/model_1_calibration.json 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
+
+    os.system("spectral-cli commit submissions/model_1.onnx submissions/model_1_calibration.json 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
     print('Committed model, waiting 30 seconds for test set')
-    # time.sleep(30)
+    time.sleep(30)
 
     os.system("spectral-cli fetch-testing-data 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
 
@@ -279,8 +280,8 @@ def create_simple_submission():
     submission_dataframe.to_parquet('submissions/submission.parquet', index=False)
 
     print('Submitting predictions')
-    # Zane uncomment when ready to submit
-    # os.system("spectral-cli submit-inferences 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544 submissions/submission.parquet")
+
+    os.system("spectral-cli submit-inferences 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544 submissions/submission.parquet")
     print('submitted!')
 if __name__ == '__main__':
-    create_simple_submission()
+    create_baseline_submission()
