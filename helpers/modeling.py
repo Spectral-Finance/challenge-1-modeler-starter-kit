@@ -241,7 +241,8 @@ def train_step(model: torch.nn.Module,
                auc_pr_fn,
                ks_fn,
                prob_diff_fn,
-               device: torch.device = device):
+               device: torch.device = device,
+               simple_submission = False):
     """
     Training function for the model provided in the starter kit
     :param model:
@@ -300,7 +301,7 @@ def train_step(model: torch.nn.Module,
     train_ks /= len(data_loader)
     train_prob_diff /= len(data_loader)
 
-    if epochs % 5 == 0:
+    if epochs % 5 == 0 and not simple_submission:
         print(
             f'Training metrics:\nLoss: {train_loss:.5f} | Recall: {train_rec:.2f}% | F1-Score: {train_f1:.2f}% | AUROC: {train_auroc:.2f}% | Brier Score: {train_brier:.2f}% | AUC PR: {train_aucpr:.2f}% | KS-Statistic: {train_ks:.2f}% | Pred Prob Diff: {train_prob_diff:.2f}%')
     return {'loss': train_loss.item(),
@@ -325,7 +326,8 @@ def test_step(data_loader: torch.utils.data.DataLoader,
               auc_pr_fn,
               ks_fn,
               prob_diff_fn,
-              device: torch.device = device):
+              device: torch.device = device,
+              simple_submission = False):
     """
     Test step for the example model in the starter kit
     :param data_loader:
@@ -376,7 +378,7 @@ def test_step(data_loader: torch.utils.data.DataLoader,
         test_ks /= len(data_loader)
         test_prob_diff /= len(data_loader)
 
-        if epochs % 5 == 0:
+        if epochs % 5 == 0 and not simple_submission:
             print(
                 f'Testing metrics:\nLoss: {test_loss:.5f} | Recall: {test_rec:.2f}% | F1-Score: {test_f1:.2f}% | AUROC: {test_auroc:.2f}% | Brier Score: {test_brier:.2f}% | AUC PR: {test_aucpr:.2f}% | KS-Statistic: {test_ks:.2f}% | Pred Prob Diff: {test_prob_diff:.2f}%')
         return {'loss': test_loss.item(),

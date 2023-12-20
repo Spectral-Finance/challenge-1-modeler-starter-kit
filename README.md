@@ -35,8 +35,29 @@ This repository aims to assist participants in understanding the following compo
 4. Leveraging zero knowledge machine learning (implicit in this Starter Kit)
 
 
-## For Developers:
 
+
+## You may choose to submit our baseline model, or train your own model. 
+
+### To submit using our baseline model.
+Run the following commands in terminal after cloning the repository.
+
+We're providing you with this code snippet to help you gain a quick understanding of the submission workflow on Spectral. 
+
+
+```
+python3 -m venv env
+source env/bin/activate
+pip install -r requirements.txt
+spectral-cli configure
+```
+You will be prompted to enter your API keys and Privy address. 
+```
+python baseline_submission.py
+```
+
+
+### To train your own model, follow the steps below.
 
 ### Prepare Your Environment
 
