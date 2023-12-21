@@ -52,6 +52,7 @@ pip install -r requirements.txt
 spectral-cli configure
 ```
 You will be prompted to enter your API keys and Privy address. 
+You will also need to create your multisig in the Spectral App. See our [gitbook](https://docs.spectral.finance/technical-architecture-and-key-notions/spectral-accounts#3.-multisig-wallet) for more info
 ```
 python3 baseline_submission.py
 ```
