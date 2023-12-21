@@ -222,7 +222,7 @@ def create_baseline_submission():
 
 
     os.system("spectral-cli commit submissions/model_1.onnx submissions/model_1_calibration.json 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
-    print('Committed model, waiting 2 minutes for test set')
+    print('Waiting 2 minutes for test set')
     time.sleep(240)
 
     os.system("spectral-cli fetch-testing-data 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
