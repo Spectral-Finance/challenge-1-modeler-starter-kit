@@ -80,8 +80,7 @@ def create_baseline_submission():
 
 
     training_cols = list(training_dataframe.columns.drop(
-        ['borrow_timestamp', 'wallet_address', 'borrow_block_number', 'target',
-         'withdraw_deposit_diff_If_positive_eth']))\
+        ['borrow_timestamp', 'wallet_address', 'borrow_block_number', 'target']))\
 
 
     # Split the data into training and validation sets
@@ -222,9 +221,11 @@ def create_baseline_submission():
 
 
     os.system("spectral-cli commit submissions/model_1.onnx submissions/model_1_calibration.json 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
-    print('Waiting 2 minutes for test set')
-    time.sleep(240)
+    print('Waiting 4 minutes for your unique test set.')
+    for i in tqdm(range(240)):
+        time.sleep(1)
 
+    print('Fetching addresses in your unique test set.')
     os.system("spectral-cli fetch-testing-data 0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544")
 
     test_set_addresses = pd.read_parquet('0xFDC1BE05aD924e6Fc4Ab2c6443279fF7C0AB5544_testing_dataset.parquet')[
