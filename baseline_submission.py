@@ -212,7 +212,8 @@ def create_baseline_submission():
                       input_names=['input'],
                       output_names=['output'],
                       dynamic_axes={'input': {0: 'batch_size'},
-                                    'output': {0: 'batch_size'}})
+                                    'output': {0: 'batch_size'}},
+                      opset_version=14)
 
     x = validation_features_batch[:1].reshape([-1]).numpy().tolist()
     data = dict(input_data=[x])
