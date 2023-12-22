@@ -66,4 +66,4 @@ if __name__ == '__main__':
     # Example usage
     wallet_address = '0x9d9c3513189342c8e24a987fd25df3bda68b2af4'
     probability_of_liquidation_prediction = make_example_prediction_for_address(wallet_address)
-    print(f'The predicted probability of liquidation for {wallet_address} in the next 30 days is {round(probability_of_liquidation_prediction, 4)}')
+    print(f'The predicted probability of liquidation for {wallet_address} in the next 30 days is {str(round(probability_of_liquidation_prediction, 4))}')
