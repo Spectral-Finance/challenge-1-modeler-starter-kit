@@ -36,21 +36,25 @@ def make_example_prediction_for_address(wallet_address: str) -> float:
     spectral_api_key = config['global']['spectral_api_key']
     client = CreditScoringWrapper({'spectral_api_key': spectral_api_key})
 
+    # Make a request to the Spectral Datawrappers for the wallet address features
     test_request = client.request({"wallet_address": wallet_address})
-    training_cols = list(test_request.keys())
-    training_cols.remove('wallet_address')
-    training_cols.remove('withdraw_amount_sum_eth')
     model_input_dataframe = pd.DataFrame(test_request, index=[0])
 
-    sc = joblib.load('model/example_standard_scaler.pkl')  # load our scaler
-    # Scale the test data in the same way we scaled our training and validation data
-    test_input_scaled = sc.transform(model_input_dataframe[training_cols].to_numpy())
 
-    # load the model version
-    # generate the ML model output from the ONNX file
+    # Scale the test data in the same way we scaled our training and validation data
+    sc = joblib.load('model/example_standard_scaler.pkl')  # load our scaler
+    # Order cols in the same way we did in training
+    training_cols = joblib.load('model/training_cols.pkl')  # load our ordered training cols
+    test_input_scaled = sc.transform(model_input_dataframe[training_cols].values)
+    # Format inputs
+    inputs_onnx = np.array(test_input_scaled).astype(np.float32)
+
+
+    # Load the model
     onnx_model = onnx.load(model_onnx_filepath)
     onnx.checker.check_model(onnx_model)
-    inputs_onnx = np.array(test_input_scaled).astype(np.float32)
+
+    # Make a prediction
     onnx_session = onnxruntime.InferenceSession(model_onnx_filepath)
     onnx_input = {onnx_session.get_inputs()[0].name: inputs_onnx}
     onnx_output_prob = onnx_session.run(None, onnx_input)
