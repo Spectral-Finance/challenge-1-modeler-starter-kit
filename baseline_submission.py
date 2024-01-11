@@ -246,6 +246,8 @@ def create_baseline_submission():
     spectral_api_key = config['global']['spectral_api_key']
     client = CreditScoringWrapper({'spectral_api_key': spectral_api_key})
 
+    # Format for new batch request method
+    test_set_addresses = {'wallets_addresses': test_set_addresses}
     response = client.request_batch(test_set_addresses)
     test_set_with_features = pd.DataFrame(response)
     print(f'Fetched {test_set_with_features.shape[1]} features for {test_set_with_features.shape[0]} addresses')
