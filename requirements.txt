@@ -95,7 +95,7 @@ onnx==1.15.0
 onnxruntime==1.16.1
 overrides==7.4.0
 packaging==23.2
-pandas==2.1.2
+pandas==2.1.4
 pandocfilters==1.5.0
 parsimonious==0.9.0
 parso==0.8.3
@@ -109,7 +109,7 @@ protobuf==4.25.0
 psutil==5.9.6
 ptyprocess==0.7.0
 pure-eval==0.2.2
-pyarrow==14.0.1
+pyarrow==14.0.2
 pycparser==2.21
 pycryptodome==3.19.0
 Pygments==2.16.1
@@ -138,8 +138,8 @@ Send2Trash==1.8.2
 six==1.16.0
 sniffio==1.3.0
 soupsieve==2.5
-spectral-cli==0.1.13
-spectral-datawrappers==0.1.5
+spectral-cli==0.1.15
+spectral-datawrappers==0.2.2
 stack-data==0.6.3
 sympy==1.12
 terminado==0.17.1
